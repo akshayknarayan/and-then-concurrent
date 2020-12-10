@@ -3,6 +3,11 @@ name = "and-then-concurrent"
 version = "0.1.0"
 authors = ["Akshay Narayan <akshayn@mit.edu>"]
 edition = "2018"
+license = "MIT"
+
+readme = "README.md"
+description = "Concurrent and-then combinator for Rust streams. "
+repository = "https://github.com/akshayknarayan/and-then-concurrent"
 
 [dependencies]
 futures-util = "0.3"

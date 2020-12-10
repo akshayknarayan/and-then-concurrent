@@ -1,5 +1,7 @@
 # and-then-concurrent
 
+![Rust](https://github.com/akshayknarayan/and-then-concurrent/workflows/Rust/badge.svg)
+
 Use on `impl Stream`s via the [`TryStreamAndThenExt`] trait.
 
 Why is this necessary? Consider the example below. We have a `Stream` from `try_unfold`, but
