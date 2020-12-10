@@ -1,0 +1,12 @@
+[package]
+name = "and-then-concurrent"
+version = "0.1.0"
+authors = ["Akshay Narayan <akshayn@mit.edu>"]
+edition = "2018"
+
+[dependencies]
+futures-util = "0.3"
+pin-project = "1"
+
+[dev-dependencies]
+tokio = { version = "0.3", features = ["full"] }
