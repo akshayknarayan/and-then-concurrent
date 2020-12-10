@@ -1,5 +1,7 @@
 # and-then-concurrent
 
+Use on `impl Stream`s via the [`TryStreamAndThenExt`] trait.
+
 Why is this necessary? Consider the example below. We have a `Stream` from `try_unfold`, but
 this stream is splitting some larger stream into sub-streams, with each sub-stream
 represented by a channel. If we simply called `and_then`, that function's implementation,
@@ -10,7 +12,7 @@ again.
 
 Unfortunately, in this case, the backing stream has to be polled for our future to resolve!
 So using `and_then` will deadlock. Instead, this crate makes a tradeoff: it will hold a
-list of pending futures in a [`futures_util::stream::FuturesUnordered`], so it is safe to
+list of pending futures in a `FuturesUnordered`, so it is safe to
 poll the backing stream. This means that if the resulting futures don't resolve, we could
 have a large list of futures.
 
